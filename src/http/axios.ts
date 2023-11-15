@@ -10,6 +10,7 @@ export const $api = axios.create({
     baseURL: API_URL,
     headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin' : 'http://109.94.209.67:3000'
     },
 
 })
