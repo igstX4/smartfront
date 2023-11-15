@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 
 
 
-const API_URL = 'http://localhost:5000'
+const API_URL = 'http://109.94.209.67:5000'
 export const $api = axios.create({
     withCredentials: true,
     baseURL: API_URL,
