@@ -1,0 +1,61 @@
+.menuItemDiv {
+  background-color: #F9F9F9;
+  border: 3px solid #FFB800;
+  border-radius: 10px;
+  width: 40vw;
+  min-height: 200px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+.name {
+  font-size: 32px;
+  margin-left: 7px;
+  margin-top: 7px;
+  margin-bottom: 0;
+}
+.description {
+  font-weight: 265;
+  margin-left: 7px;
+  margin-top: 7px;
+  word-break: break-all;
+}
+.price {
+  color: var(--main-color);
+  font-size: 38px;
+  font-weight: bold;
+  margin-top: 7px;
+  margin-left: 7px;
+  margin-bottom: 7px;
+}
+.div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+}
+.btn {
+  height: 50px;
+  width: 180px;
+  font-size: 24px;
+  border: 3px solid #FFB800;
+  border-radius: 10px;
+  color: var(--main-color);
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  transition: .3s;
+  margin-right: 7px;
+  align-items: center;
+  &:hover {
+    background-color: #efefef;
+  }
+}
+@media all and (max-width : 1200px) {
+  .menuItemDiv {
+    width: 45vw;
+  }
+}
+@media all and (max-width : 880px) {
+  .menuItemDiv {
+    width: 85vw;
+  }
+}

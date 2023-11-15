@@ -1,0 +1,76 @@
+.inputdiv {
+  width: 300px;
+  height: 300px;
+  border-radius: 10px;
+  border: 3px solid #FFB800;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 80px;
+  input {
+    font-size: 20px;
+    width: 260px;
+    margin-top: 10px;
+  }
+  button {
+    height: 50px;
+    width: 180px;
+    font-size: 24px;
+    border: 3px solid #FFB800;
+    border-radius: 10px;
+    color: var(--main-color);
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    transition: .3s;
+    margin-right: 7px;
+    align-items: center;
+    &:hover {
+      background-color: #efefef;
+    }
+  }
+}
+
+.admin {
+  display: flex;
+  justify-content: center;
+}
+.mainData {
+  display: flex;
+}
+.items {
+  margin-top: 55px;
+}
+.savebtn {
+  width: 200px;
+  margin-top: 20px;
+  height: 50px;
+  align-self: flex-end;
+  font-size: 24px;
+  cursor: pointer;
+  border: 3px solid #FFB800;
+  border-radius: 10px;
+  color: var(--main-color);
+  display: flex;
+  background-color: transparent;
+  justify-content: center;
+  transition: .3s;
+  margin-right: 7px;
+  align-items: center;
+  &:hover {
+    background-color: #efefef;
+  }
+}
+.searchDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+@media all and (max-width : 880px) {
+  .mainData {
+    flex-direction: column;
+    align-items: center;
+  }
+}

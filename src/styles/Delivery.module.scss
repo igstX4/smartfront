@@ -1,0 +1,26 @@
+.delivery {
+  width: 25%;
+  background-color: #F9F9F9;
+  border: 3px solid #FFB800;
+  border-radius: 10px;
+  margin-top: 70px;
+  margin-left: 20px;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 7px;
+  h1 {
+    color: var(--main-color);
+  }
+  p {
+    font-size: 27px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+}
+@media all and (max-width : 1200px) {
+  .delivery {
+    display: none;
+  }
+}
