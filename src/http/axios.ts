@@ -1,16 +1,13 @@
 import axios from 'axios'
 import Cookies from "js-cookie";
 
-
-
-
 const API_URL = 'http://109.94.209.67:5000'
 export const $api = axios.create({
     withCredentials: true,
     baseURL: API_URL,
     headers: {
         'Content-Type': 'application/json',
-        'Access-Control-Allow-Origin' : 'http://109.94.209.67:3000'
+        'Access-Control-Allow-Origin' : '*'
     },
 
 })
