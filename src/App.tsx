@@ -56,7 +56,7 @@ function App() {
                 <Search value={search} setValue={setSearch} IsFavourite={onlyFavourite} setFavourite={setOnlyFavouriteFunc}/>
               <div>
                 <h1 className={s.title}>{active.name}</h1>
-                {filteredMenu ? filteredMenu.length === 0 ? <h1>На жаль нічого не знайдено</h1> : filteredMenu.map((el) => (
+                {filteredMenu ? filteredMenu.length === 0 ? <h1 style={{textAlign: 'center'}}>На жаль нічого не знайдено</h1> : filteredMenu.map((el) => (
                   <MenuItem key={el._id} id={el._id} name={el.name} description={el.description} price={el.price} />
                 )) : <h1>Loading...</h1>}
               </div>

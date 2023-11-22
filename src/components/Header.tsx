@@ -40,9 +40,12 @@ export const Header : FC<HeaderI> = ({setActive}) => {
                         {el.name}
                     </h1>
                 </li>)}
-                <NavLink to={'/contacts'} className={s.menuItemBox}>
-                    <h1 className="burger_title contacts">Контакти</h1>
-                </NavLink>
+              <li style={{marginBottom: '30px'}}><NavLink to={'/contacts'} className={s.menuItemBox}>
+              <h1 className="contacts">Контакти</h1>
+            </NavLink>
+            </li>
+
+
 
 
             </ul>

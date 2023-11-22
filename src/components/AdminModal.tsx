@@ -18,17 +18,6 @@ interface AdminModalI {
 export const AdminModal : FC<AdminModalI> = ({savedArray, setOnlySave, isActive, oldData,setActive, setSave}) => {
   const menu = useAppSelector((state) => state.menu.items)
   const dispatch = useAppDispatch()
-// @Prop({ required: true })
-//   name: string;
-// @Prop()
-//   image: string;
-// @Prop()
-//   description: string;
-// @Prop({ required: true })
-//   price: number;
-// @Prop({required : true})
-//   category : string
-// }
   const handleSave = () => {
     savedArray.map((item, i) => {
       console.log(i, savedArray.length)
