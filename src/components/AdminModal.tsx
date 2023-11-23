@@ -15,14 +15,14 @@ interface AdminModalI {
   setSave: () => void,
   setOnlySave: (arg : boolean) => void
 }
+
 export const AdminModal : FC<AdminModalI> = ({savedArray, setOnlySave, isActive, oldData,setActive, setSave}) => {
   const menu = useAppSelector((state) => state.menu.items)
   const dispatch = useAppDispatch()
   const handleSave = () => {
     savedArray.map((item, i) => {
-      console.log(i, savedArray.length)
       if (i == savedArray.length-1) {
-        dispatch(fetchUserById())
+        dispatch(fetchUserById()) //
         setActive()
         setSave()
         setOnlySave(false)

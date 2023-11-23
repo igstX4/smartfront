@@ -8,7 +8,7 @@
   margin-bottom: 10px;
 }
 .name {
-  font-size: 32px;
+  font-size: 28px;
   margin-left: 7px;
   margin-top: 7px;
   margin-bottom: 0;
@@ -56,6 +56,7 @@
 }
 @media all and (max-width : 880px) {
   .menuItemDiv {
+    margin-left: 0;
     width: 85vw;
   }
 }
