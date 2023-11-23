@@ -17,18 +17,48 @@
   margin-top: 75px;
   border-radius: 10px;
 }
+.number {
+  color: var(--main-color);
+}
 .icon {
   cursor: pointer;
   margin-right: 4px;
 }
+.searchWrapper {
+  display: block;
+}
+.numberDiv {
+  display: none;
+  justify-content: center;
+}
 @media all and (max-width : 1200px) {
   .searchDiv {
     width: 45vw;
+  }
+  .numberDiv {
+    display: flex;
   }
 }
 @media all and (max-width : 880px) {
   .searchDiv {
     width: 75vw;
     margin-left: 5px;
+  }
+  .numberDiv {
+    display: flex;
+  }
+}
+@media all and (max-width : 550px) {
+  .searchWrapper {
+    h1 {
+      font-size: 25px;
+    }
+  }
+  .searchDiv {
+    width: 90vw;
+    margin-left: 5px;
+  }
+  .numberDiv {
+    display: flex;
   }
 }

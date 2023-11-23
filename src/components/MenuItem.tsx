@@ -50,7 +50,7 @@ export const MenuItem: FC<MenuItemI> = ({name, description, price, id}) => {
             <h1 className={s.name}>{name}</h1>
             <p className={s.description}>{description}</p>
             <div className={s.infoDiv}>
-                <p className={s.price}>{price}</p>
+                <p className={s.price}>{price}грн</p>
                 <div className={s.div}>
                     <div onClick={HandleFavourites} className={isFavourite ? 'active' : ''} id="star">
                         <svg width="42px" height="40px" viewBox="0 0 42 40" version="1.1" xmlns="http://www.w3.org/2000/svg">
