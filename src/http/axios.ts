@@ -3,7 +3,7 @@ import Cookies from "js-cookie";
 
 // const API_URL = 'http://176.118.167.164:5000'
 
-const API_URL = 'http://176.118.167.164:5000'
+const API_URL = 'https://smartpizza.com.ua/api'
 export const $api = axios.create({
     withCredentials: true,
     baseURL: API_URL,
