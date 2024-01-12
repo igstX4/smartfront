@@ -14,11 +14,9 @@ interface MenuItemI {
   isFavourite: boolean,
   id: string,
   category: string,
-  setSavedId: (id: string) => void
-  isSaving: boolean,
-  setData: (obj : savedDataI) => void
+  setSave: (obj : savedDataI) => void
 }
-export const MenuAdminItem : FC<MenuItemI> = ({name, isSaving, setData, setSavedId, id, category, description, isFavourite, price}) => {
+export const MenuAdminItem : FC<MenuItemI> = ({name, id, setSave, category, description, isFavourite, price}) => {
   const [nameValue, setNameValue] = useState(name)
   const [deskValue, setDeskValue] = useState(description)
   const [priceValue, setPriceValue] = useState(price)
@@ -26,24 +24,26 @@ export const MenuAdminItem : FC<MenuItemI> = ({name, isSaving, setData, setSaved
   const sxStyles = {
     width: 200,
   }
-  // name : string,
-  //   descr: string,
-  //   category: string,
-  //   price: number,
-  //   id: string
   useEffect(() => {
-      if (isSaving) {
-        setData({name : nameValue, descr: deskValue, category : categoryS, id, price: priceValue})
-      }
-  }, [isSaving])
+    if (name !== nameValue || category !== categoryS || description !== deskValue || price !== priceValue) {
+      setSave({name: nameValue, id: id, category: categoryS, price: priceValue, descr: deskValue})
+    }
+  }, [nameValue, deskValue, priceValue, categoryS])
   const handleAll = (func : any) => {
-      setSavedId(id)
+    setSave({name: nameValue, id: id, category: categoryS, price: priceValue, descr: deskValue})
   }
   return <div className={s.menuItemDiv}>
-    <input value={nameValue} onChange={(e) => handleAll(setNameValue(e.target.value))} className={s.name}/>
-    <textarea value={deskValue} onChange={(e) => handleAll(setDeskValue(e.target.value))} className={s.description} />
+    <input value={nameValue} onChange={(e) => {
+      setNameValue(e.target.value)
+
+    }} className={s.name}/>
+    <textarea value={deskValue} onChange={(e) => {
+      setDeskValue(e.target.value)
+    }} className={s.description} />
     <div className={s.infoDiv}>
-      <input className={s.price} value={priceValue} onChange={(e) => +e.target.value ? handleAll(setPriceValue(+e.target.value)) : handleAll(setPriceValue(0))} />
+      <input className={s.price} value={priceValue} onChange={(e) => {+e.target.value ?setPriceValue(+e.target.value) : setPriceValue(0)
+
+      }} />
     </div>
     <FormControl>
       <InputLabel id="demo-simple-select-label">Категорія</InputLabel>
@@ -54,7 +54,9 @@ export const MenuAdminItem : FC<MenuItemI> = ({name, isSaving, setData, setSaved
         label="Категорія"
         sx={sxStyles}
         color={"warning"}
-        onChange={(event) => handleAll(setCategoryS(event.target.value))}
+        onChange={(event) => {
+          setCategoryS(event.target.value)
+        }}
       >
         <MenuItem value={'Menu'}>Меню</MenuItem>
         <MenuItem value={'Pizza'}>Піца</MenuItem>

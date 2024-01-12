@@ -6,8 +6,15 @@
 .main {
   display: flex;
   flex-direction: column;
-  //justify-content: center;
-  //align-items: center;
+  justify-content: center;
+  align-items: center;
+  a {
+    text-decoration: none;
+  }
+}
+.map {
+  width: 450px;
+  height: 300px;
 }
 .item {
   display: flex;
@@ -23,6 +30,7 @@
   text-align: center;
 }
 .itemdiv {
+  margin-top: 10px;
   margin-right: 40px;
   display: flex;
   flex-direction: column;
@@ -51,5 +59,19 @@
   .yellow {
     color: var(--main-color);
     font-weight: bold;
+  }
+}
+@media (max-width: 520px) {
+  .map {
+    width: 350px;
+    height: 250px;
+    margin-left: 10px;
+  }
+}
+@media (max-width: 315px) {
+  .map {
+    width: 250px;
+    height: 150px;
+    margin-left: 10px;
   }
 }

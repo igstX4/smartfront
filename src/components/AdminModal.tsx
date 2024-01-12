@@ -12,11 +12,10 @@ interface AdminModalI {
   isActive: boolean,
   setActive : () => void,
   oldData : MenuItemI[],
-  setSave: () => void,
-  setOnlySave: (arg : boolean) => void
+  cleanData: () => void
 }
 
-export const AdminModal : FC<AdminModalI> = ({savedArray, setOnlySave, isActive, oldData,setActive, setSave}) => {
+export const AdminModal : FC<AdminModalI> = ({savedArray, cleanData, isActive, oldData,setActive}) => {
   const menu = useAppSelector((state) => state.menu.items)
   const dispatch = useAppDispatch()
   const handleSave = () => {
@@ -24,17 +23,15 @@ export const AdminModal : FC<AdminModalI> = ({savedArray, setOnlySave, isActive,
       if (i == savedArray.length-1) {
         dispatch(fetchUserById()) //
         setActive()
-        setSave()
-        setOnlySave(false)
       }
       $api.patch(`/menu/${item.id}`, {name: item.name, description: item.descr, price: item.price, category: item.category})
     })
+    cleanData()
   }
   if (isActive) {
     return (
       <div className={s.modal} onClick={() => {
         setActive()
-        setOnlySave(false)
       }}>
           <div onClick={(e) =>{
             e.stopPropagation()
