@@ -5,16 +5,71 @@
   align-items: center;
   justify-content: center;
   position: fixed;
-  z-index: 9999;
+  z-index: 999;
   background-color: rgba(0, 0, 0, 0.32);
 }
 .modalcontent {
   width: 1200px;
-  height: 800px;
+  height: 720px;
   border: 3px solid #FFB800;
   border-radius: 10px;
   background-color: #F9F9F9;
   overflow-y: scroll;
+}
+.modalContentCreate {
+  width: 800px;
+  height: 450px;
+  border: 3px solid #FFB800;
+  border-radius: 10px;
+  background-color: #F9F9F9;
+  overflow-y: scroll;
+  .title {
+    text-align: center;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  input, textarea {
+    border: 2px solid var(--main-color);
+    outline: none;
+  }
+  .name {
+    width: 70%;
+    height: 40px;
+    font-size: 24px;
+  }
+  .textarea {
+    margin-top: 18px;
+    resize: none;
+    width: 80%;
+    font-size: 15px;
+    height: 55px;
+  }
+  .price {
+    margin-top: 15px;
+    width: 80px;
+    height: 40px;
+    font-size: 24px;
+  }
+  .button {
+    margin-top: 20px;
+    height: 50px;
+    width: 180px;
+    font-size: 24px;
+    border: 3px solid #FFB800;
+    border-radius: 10px;
+    color: var(--main-color);
+    display: flex;
+    background-color: transparent;
+    justify-content: center;
+    transition: .3s;
+    margin-right: 7px;
+    align-items: center;
+    &:hover {
+      background-color: #efefef;
+    }
+  }
 }
 .data {
   display: flex;
@@ -49,6 +104,14 @@
   &:hover {
     background-color: #efefef;
   }
+}
+.cross {
+  color: white;
+  font-size: 42px;
+  cursor: pointer;
+  position: fixed;
+  align-self: flex-start;
+  left: 25px;
 }
 @media all and (max-width : 1225px) {
   .modalcontent {

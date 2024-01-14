@@ -9,6 +9,7 @@ import { MenuItem } from "../components/MenuItem";
 import { MenuAdminItem } from "../components/MenuAdminItem";
 import { AdminModal } from "../components/AdminModal";
 import {MenuItemI} from "../redux/reducers/menuitems.reducer";
+import { CreateModal } from "../components/CreateNewItem";
 
 
 export interface savedDataI {
@@ -25,6 +26,7 @@ export const Admin = () => {
   const [oldData, setOldData] = useState<MenuItemI[]>([])
   const [search, setSearch] = useState('')
   const [active, setActive] = useState(false)
+  const [activeCreate, setActiveCreate] = useState(false)
 
   console.log(savedData)
   useEffect(() => {
@@ -94,15 +96,21 @@ export const Admin = () => {
 
   return (
     <>
+      {activeCreate ? <CreateModal setActive={() => setActiveCreate(false)} /> : null}
       <AdminModal cleanData={cleanData} oldData={oldData} setActive={() => setActive((active) => !active)} isActive={active} savedArray={savedData} />
     <div className={s.mainData}>
       <div className={s.searchDiv}>
         <Search value={search} setValue={setSearch}/>
-        {savedData.length === 0 ? null : <button onClick={() => {
-          setActive(true)
-          setSearch('')
-        }} className={s.savebtn}>Сохранить</button>}
-      </div>
+        <div className={s.btns}>
+          <button onClick={() => {
+            setActiveCreate(true)
+          }} className={s.savebtn}>Создать</button>
+          {savedData.length === 0 ? null : <button onClick={() => {
+            setActive(true)
+            setSearch('')
+          }} className={s.savebtn}>Сохранить</button>}
+        </div>
+        </div>
       <div className={s.items}>
         {filterMenu() ? filterMenu().map((el) => (
           <MenuAdminItem setSave={setNewData} category={el.category}  key={el._id} id={el._id} name={el.name} description={el.description} price={el.price} isFavourite={true} />
